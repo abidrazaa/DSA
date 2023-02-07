@@ -29,9 +29,7 @@ def binarySearch(arr,target,leftMost=False):
             left = mid + 1
         
     return idx
-
-
-
+    
 
 arr = [1,1,1,1,2,2,3,3,3,3,3,4,5,6,7,8,9,9,9,9,9]
 num = 1
