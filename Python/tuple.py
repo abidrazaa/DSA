@@ -7,6 +7,7 @@ def sortTupleByParticularIndex(l):
     l.sort(key=lambda s:s[2])
 
     # need to store in a variable
+    # first index is iterator and the second index is the value on which we have to sort
     l = sorted(l, key = lambda s:s[2])
 
     print("sorted ==>",l)
