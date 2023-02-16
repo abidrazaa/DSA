@@ -7,6 +7,7 @@ class Node:
         self.left = None
 
     def insert(self, data):
+        # if root node is present
         if self.data:
             if data < self.data:
                 if self.left is None:
@@ -17,9 +18,10 @@ class Node:
                 if self.right is None:
                     self.right = Node(data)
                 else:
-                    self.right.insert(data)
+                    self.right.insert(data) 
+        # if root node is not there, make current node the root node
         else:
-            self.data = data
+            self = Node(data)
 
     def inOrderTraversal(self):
         if self.data is None:
