@@ -1,5 +1,3 @@
-
-
 def NumberRepetition(arr,target):
     
     leftMostIdx = binarySearch(arr,target,True)
