@@ -85,20 +85,60 @@ class LinkedList:
         self.head = prev
 
 
+    # Remove Kth element from the end of the Linked List
+    def removeKthNodeFromEnd(self, head, k):
+        # We will be doing this by two pointer approach
+        first = head
+        second = head
+        counter = 0
+
+        # we are moving second pointer k nodes ahead of the first
+        while counter<k:
+            second = second.next
+            counter+=1
+
+        # now we have second pointer k nodes ahead of the first. If the second
+        # pointer points to NULL, this means we have to remove the head node
+        # else, we will increment both the pointer until the second pointer reaches the NULL 
+        # so we'll have our first pointer k nodes before the end :))
+
+        if second is None:
+            # removing the head node
+            head.value = head.next.value
+            head.next = head.next.next
+        
+            return
+
+        while second.next is not None:
+            second = second.next
+            first = first.next
+
+        first.next = first.next.next
+
 
 linkedList = LinkedList()
 
 linkedList.pushAtBeginning('1')
 linkedList.pushAtBeginning('2')
 linkedList.pushAtBeginning('3')
+linkedList.pushAtBeginning('4')
+linkedList.pushAtBeginning('5')
+linkedList.printLinkedList()
+print()
+linkedList.removeKthNodeFromEnd(linkedList.head,3)
+print('Remove Kth Element from end:')
+linkedList.printLinkedList()
+print()
 linkedList.insertAfter('inserted',linkedList.head.next)
 linkedList.pushAtEnd('end') 
 linkedList.printLinkedList()
 linkedList.reverseLinkedList()
+print('Reverse Linked List:')
 linkedList.printLinkedList()
 print(linkedList.searchInLinkedList('202'))
 linkedList.deleteNodeAtGivenPosition(1)
 print()
 linkedList.printLinkedList()
 print()
+
 
