@@ -61,10 +61,6 @@ class LinkedList:
             prev = curr
             curr = curr.next
 
-
-
-    # https://www.geeksforgeeks.org/reverse-a-linked-list/ to see diagramtic flow
-
     def reverseLinkedList(self):
         # To set first node's next as null/None 
         prev = None
@@ -84,8 +80,6 @@ class LinkedList:
         # setting linked list head to the last node
         self.head = prev
 
-
-    # Remove Kth element from the end of the Linked List
     def removeKthNodeFromEnd(self, head, k):
         # We will be doing this by two pointer approach
         first = head
@@ -114,6 +108,18 @@ class LinkedList:
             first = first.next
 
         first.next = first.next.next
+    
+    def removeDuplicatesFromLinkedList(self,linkedList):
+        # We are using two pointers approach
+        first = linkedList
+        second = linkedList.next
+
+        while second is not None:
+            if first.data == second.data:
+                first.next = second.next
+            else:
+                first = second
+            second = second.next
 
 
 linkedList = LinkedList()
@@ -121,17 +127,28 @@ linkedList = LinkedList()
 linkedList.pushAtBeginning('1')
 linkedList.pushAtBeginning('2')
 linkedList.pushAtBeginning('3')
+linkedList.pushAtBeginning('3')
+linkedList.pushAtBeginning('3')
 linkedList.pushAtBeginning('4')
 linkedList.pushAtBeginning('5')
+
+print("Original Linked List")
 linkedList.printLinkedList()
 print()
+
+linkedList.removeDuplicatesFromLinkedList(linkedList.head)
+print("Remove Duplicates From Linked List:")
+linkedList.printLinkedList()
+print()
+
 linkedList.removeKthNodeFromEnd(linkedList.head,3)
 print('Remove Kth Element from end:')
 linkedList.printLinkedList()
 print()
+
 linkedList.insertAfter('inserted',linkedList.head.next)
 linkedList.pushAtEnd('end') 
-linkedList.printLinkedList()
+# linkedList.printLinkedList()
 linkedList.reverseLinkedList()
 print('Reverse Linked List:')
 linkedList.printLinkedList()
