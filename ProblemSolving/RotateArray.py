@@ -19,4 +19,14 @@ def rotateArray(array,jumps):
 
     return newArr
 
-print(rotateArray([1,2,3,4,5,6,7],3))
+# modify nums in-place instead.
+
+def rotateArrayInPlace(array,jumps):
+
+    for i in range(jumps):
+        # removing the last element and inserting at the first index
+        array.insert(0,array.pop())
+    return array
+
+print(rotateArrayInPlace([1,2],3))
+print(rotateArrayInPlace([1,2,3,4,5,6,7],3))
