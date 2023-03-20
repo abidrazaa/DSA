@@ -16,7 +16,7 @@
 # BRUTE FORCE APPROACH
 def moveZeroes(arr):
     for i in range(len(arr)):
-        if arr[i]>0 and i>0:
+        if arr[i]!=0 and i>0:
             curr = i
             prev = i-1
 
@@ -26,8 +26,18 @@ def moveZeroes(arr):
                 prev-=1
     return arr
 
-print(moveZeroes([0,1,0,3,12]))
-print(moveZeroes([0]))
+# BETTER SOLUTION
+def moveZeroesToEnd(arr):
+    
+    for i in range(len(arr)):
+        if arr[i]==0:
+            arr.pop(i)
+            arr.append(0)
+    return arr
+
+
+print(moveZeroesToEnd([0,1,0,3,12]))
+print(moveZeroesToEnd([0]))
 
 
             
