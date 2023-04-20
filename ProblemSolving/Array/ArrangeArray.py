@@ -20,3 +20,9 @@ def arrangeNegativeValuesInTheLast(arr):
     print(arr)
 
 arrangeNegativeValuesInTheLast(arr)
+
+
+
+
+
+
