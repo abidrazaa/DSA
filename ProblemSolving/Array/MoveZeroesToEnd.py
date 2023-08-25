@@ -41,4 +41,19 @@ print(moveZeroesToEnd([0]))
 
 
             
+# def move_zeros(arr):
+# 	Length_of_array = len(arr)
+# 	Idx = 0
+# count=0
+# for i in in range(len(arr)):
+# 	If arr[i]!=0:
+# 		arr[idx]=arr[i]
+# 		idx+=1
+# 		Else:
+# 			count+=1
+	
+# 	While idx < len(array):
+# 		Arr[idx] = 0 //O(M)
+
+# O(N+M)
 
